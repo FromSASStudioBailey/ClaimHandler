@@ -99,3 +99,27 @@ proc print data=work.test412(obs=10);
    run;
 
 filename csvstep3;
+
+
+
+
+/* BELOW WILL ADD THE VARIABLE CLASS DESCRIPTION AND DROP RATING CLASS CODE */
+data work.step3_clean;
+
+set work.step3_clean;
+call streaminit(123);
+   u = rand("Uniform");  
+
+
+length Class_Description $25.;
+if u < .88 then Class_Description = 'Private Passenger Auto';
+else if u < .89 then Class_Description = 'Utility Type Auto';
+else if u < .90 then Class_Description = 'Utility Type Trailers';
+else if u < .91 then Class_Description = 'Mobile Home Trailers';
+else if u < .97 then Class_Description = 'Motorcycles';
+else if u < .98 then Class_Description = 'All-Terrain Vehicles';
+else if u < .99 then Class_Description = 'Dune Buggies';
+else Class_Description = 'Golf Carts';
+
+DROP  u rating_class_code;
+run;

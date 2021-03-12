@@ -32,7 +32,7 @@
                <Role exclude="categoryVars,byVar,dateVars" maxVars="0" minVars="0" name="analysisVars" type="A">Variables:</Role>
                <Role exclude="analysisVars,byVar,,dateVars" maxVars="0" minVars="0" name="categoryVars" type="A">Categorical variables:</Role>
                <Role exclude="categoryVars,analysisVars,,dateVars" maxVars="1" minVars="0" name="byVar" type="A">Grouping variable:</Role>
-               <Role exclude="analysisVars,categoryVars,byVar" maxVars="0" minVars="0" name="dateVars" type="N">Date variables:</Role>               
+               <Role exclude="analysisVars,categoryVars,byVar" maxVars="0" minVars="0" name="dateVars" type="A">Date variables:</Role>               
             </Roles>
          </DataSource>
       </DataSources>
