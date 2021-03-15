@@ -79,12 +79,9 @@
          <DataItem data="dataset"/>
 	<!--	 <OptionItem option="chkRunInfo"/> -->
       </Group>
+			<RoleItem role="dateVars"/>
+         	<RoleItem role="analysisVars"/>
 
-
-         <RoleItem role="analysisVars"/>
-
-         <RoleItem role="dateVars"/>
- 
 
    </Container>
    
@@ -257,8 +254,20 @@ PERCENT_OF_RECORDS=FREQUENCY/&RECORDS.;
 FORMAT PERCENT_OF_RECORDS PERCENT10.2;
 RUN;
 
-#end
+
 ##end
+
+filename outcsv "/home/sasdemo/Claims/CLM_DATA/OBS_ALL.CSV";
+
+proc export data=WORK.ALL_OBS
+            outfile=outcsv
+            dbms=csv replace;
+run;
+
+filename outcsv;
+
+#end
+
 
 ]]>
    </CodeTemplate>
